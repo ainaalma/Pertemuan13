@@ -1,0 +1,20 @@
+<?php
+
+/*Web Route*/
+
+  Route::prefix('Aina')->group(function () {
+  Route::get('/Aina', function () {
+    return view('welcome');
+  });
+
+  Route::get('/Latihan', function () {
+    echo "1. Latihan awal";
+    echo '<p>Awal memahami route pada laravel</p>';
+  });
+
+  Route::redirect('/contact-us', '/Aina');
+});
+
+Route::fallback( function () {
+    return "Maaf Salah alamat(Url)";
+  });
